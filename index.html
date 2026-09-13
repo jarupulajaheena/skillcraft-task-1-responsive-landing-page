@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LocalMart - Buy & Sell Locally</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="#home">
+            <i class="bi bi-shop"></i> LocalMart
+        </a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="#home">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#categories">Categories</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#products">Browse Items</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#how-it-works">How It Works</a>
+                </li>
+
+                <li class="nav-item ms-lg-3">
+                    <a href="#sell" class="btn btn-primary sell-btn">
+                        <i class="bi bi-plus-circle"></i> Sell an Item
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<!-- ================= HERO ================= -->
+<section id="home" class="hero-section">
+
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <span class="badge hero-badge mb-3">
+                    🛍️ Your Local Marketplace
+                </span>
+
+                <h1>
+                    Buy & Sell
+                    <span>Near You.</span>
+                </h1>
+
+                <p class="hero-text">
+                    Find great deals from people in your town or college.
+                    Sell things you no longer need and earn extra money.
+                </p>
+
+                <!-- Search -->
+                <div class="search-box">
+
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="bi bi-search"></i>
+                        </span>
+
+                        <input type="text"
+                               id="searchInput"
+                               class="form-control"
+                               placeholder="Search for phones, books, furniture...">
+
+                        <button class="btn btn-primary" onclick="searchProducts()">
+                            Search
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="hero-buttons mt-4">
+
+                    <a href="#products" class="btn btn-primary btn-lg me-2">
+                        Browse Items
+                    </a>
+
+                    <a href="#sell" class="btn btn-outline-dark btn-lg">
+                        Sell Something
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6 text-center mt-5 mt-lg-0">
+
+                <div class="hero-image">
+                    🛒
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+<!-- ================= CATEGORIES ================= -->
+<section id="categories" class="py-5">
+
+    <div class="container">
+
+        <div class="section-title text-center mb-5">
+            <span>EXPLORE</span>
+            <h2>Browse Categories</h2>
+            <p>Find exactly what you're looking for.</p>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-6 col-md-3">
+                <div class="category-card">
+                    <i class="bi bi-phone"></i>
+                    <h5>Electronics</h5>
+                    <p>120+ Items</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="category-card">
+                    <i class="bi bi-book"></i>
+                    <h5>Books</h5>
+                    <p>85+ Items</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="category-card">
+                    <i class="bi bi-house"></i>
+                    <h5>Furniture</h5>
+                    <p>60+ Items</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="category-card">
+                    <i class="bi bi-bag"></i>
+                    <h5>Fashion</h5>
+                    <p>150+ Items</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+<section id="products" class="products-section py-5">
+
+    <div class="container">
+
+        <div class="section-title mb-5">
+            <span>POPULAR LISTINGS</span>
+            <h2>Featured Items</h2>
+        </div>
+
+        <div class="row g-4" id="productContainer">
+
+            <!-- Product 1 -->
+            <div class="col-md-6 col-lg-3 product-item">
+
+                <div class="product-card">
+
+                    <div class="product-image">
+                        <i class="bi bi-laptop"></i>
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="category-label">
+                            Electronics
+                        </span>
+
+                        <h5>HP Laptop</h5>
+
+                        <h4>₹25,000</h4>
+
+                        <p>
+                            <i class="bi bi-geo-alt"></i>
+                            2 km away
+                        </p>
+
+                        <button class="btn btn-outline-primary w-100">
+                            View Details
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 2 -->
+            <div class="col-md-6 col-lg-3 product-item">
+
+                <div class="product-card">
+
+                    <div class="product-image">
+                        <i class="bi bi-book-half"></i>
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="category-label">
+                            Books
+                        </span>
+
+                        <h5>Engineering Books</h5>
+
+                        <h4>₹1,200</h4>
+
+                        <p>
+                            <i class="bi bi-geo-alt"></i>
+                            1.5 km away
+                        </p>
+
+                        <button class="btn btn-outline-primary w-100">
+                            View Details
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 3 -->
+            <div class="col-md-6 col-lg-3 product-item">
+
+                <div class="product-card">
+
+                    <div class="product-image">
+                        <i class="bi bi-headphones"></i>
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="category-label">
+                            Electronics
+                        </span>
+
+                        <h5>Wireless Headphones</h5>
+
+                        <h4>₹1,800</h4>
+
+                        <p>
+                            <i class="bi bi-geo-alt"></i>
+                            3 km away
+                        </p>
+
+                        <button class="btn btn-outline-primary w-100">
+                            View Details
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 4 -->
+            <div class="col-md-6 col-lg-3 product-item">
+
+                <div class="product-card">
+
+                    <div class="product-image">
+                        <i class="bi bi-chair"></i>
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="category-label">
+                            Furniture
+                        </span>
+
+                        <h5>Study Table</h5>
+
+                        <h4>₹2,500</h4>
+
+                        <p>
+                            <i class="bi bi-geo-alt"></i>
+                            4 km away
+                        </p>
+
+                        <button class="btn btn-outline-primary w-100">
+                            View Details
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= HOW IT WORKS ================= -->
+<section id="how-it-works" class="py-5">
+
+    <div class="container">
+
+        <div class="section-title text-center mb-5">
+
+            <span>SIMPLE & FAST</span>
+
+            <h2>How It Works</h2>
+
+            <p>
+                Buying and selling locally has never been easier.
+            </p>
+
+        </div>
+
+        <div class="row g-4 text-center">
+
+            <div class="col-md-4">
+
+                <div class="step-card">
+
+                    <div class="step-icon">
+                        <i class="bi bi-camera"></i>
+                    </div>
+
+                    <h4>1. List Your Item</h4>
+
+                    <p>
+                        Upload photos, add a description and set your price.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="step-card">
+
+                    <div class="step-icon">
+                        <i class="bi bi-chat-dots"></i>
+                    </div>
+
+                    <h4>2. Connect</h4>
+
+                    <p>
+                        Chat with interested buyers or sellers nearby.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="step-card">
+
+                    <div class="step-icon">
+                        <i class="bi bi-hand-thumbs-up"></i>
+                    </div>
+
+                    <h4>3. Buy or Sell</h4>
+
+                    <p>
+                        Meet locally, complete the deal and save money.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SELL CTA ================= -->
+<section id="sell" class="sell-section py-5">
+
+    <div class="container">
+
+        <div class="sell-box text-center">
+
+            <h2>Have Something to Sell?</h2>
+
+            <p>
+                Turn unused items into extra cash today.
+            </p>
+
+            <button class="btn btn-light btn-lg" onclick="sellItem()">
+                <i class="bi bi-plus-circle"></i>
+                List an Item
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-6">
+
+                <h4>
+                    <i class="bi bi-shop"></i>
+                    LocalMart
+                </h4>
+
+                <p>
+                    Your trusted local marketplace for buying and selling
+                    pre-owned items.
+                </p>
+
+            </div>
+
+            <div class="col-md-6 text-md-end">
+
+                <p class="mb-1">
+                    © 2026 LocalMart. All Rights Reserved.
+                </p>
+
+                <div class="social-icons">
+
+                    <i class="bi bi-facebook"></i>
+                    <i class="bi bi-instagram"></i>
+                    <i class="bi bi-twitter-x"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>

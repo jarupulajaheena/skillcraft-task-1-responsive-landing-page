@@ -1,0 +1,411 @@
+
+/* ================= GENERAL ================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    background: #ffffff;
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+
+/* ================= NAVBAR ================= */
+
+#mainNavbar {
+    padding: 18px 0;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+#mainNavbar.scrolled {
+    background: #ffffff;
+    padding: 10px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-brand {
+    font-size: 25px;
+    color: #0d6efd;
+}
+
+.navbar-brand i {
+    margin-right: 5px;
+}
+
+.nav-link {
+    position: relative;
+    margin: 0 8px;
+    font-weight: 500;
+    color: #222;
+    transition: 0.3s;
+}
+
+/* Hover effect */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #0d6efd;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #0d6efd;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: #0d6efd;
+}
+
+.sell-btn {
+    border-radius: 25px;
+    padding: 9px 18px;
+}
+
+
+/* ================= HERO ================= */
+
+.hero-section {
+    min-height: 100vh;
+    padding: 160px 0 100px;
+    background: linear-gradient(135deg,#eef6ff,#ffffff);
+    display: flex;
+    align-items: center;
+    
+}
+
+.hero-badge {
+    padding: 10px 16px;
+    background: #dcecff;
+    color: #0d6efd;
+    border-radius: 30px;
+}
+
+.hero-section h1 {
+    font-size: clamp(45px, 6vw, 75px);
+    font-weight: 800;
+    line-height: 1.05;
+}
+
+.hero-section h1 span {
+    color: #0d6efd;
+}
+
+.hero-text {
+    max-width: 600px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #666;
+    
+}
+
+.search-box {
+    max-width: 600px;
+    margin-top: 30px;
+}
+
+.search-box .input-group {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.search-box .input-group-text {
+    background: white;
+    border: none;
+}
+
+.search-box input {
+    border: none;
+    box-shadow: none;
+}
+
+.search-box button {
+    padding: 12px 25px;
+}
+
+.hero-image {
+    width: 350px;
+    height: 350px;
+    margin: auto;
+    border-radius: 50%;
+    background: #0d6efd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 150px;
+    box-shadow: 0 30px 60px rgba(13, 110, 253, 0.25);
+}
+
+
+/* ================= SECTION TITLE ================= */
+
+.section-title span {
+    font-size: 13px;
+    font-weight: bold;
+    color: #0d6efd;
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+.section-title p {
+    color: #777;
+}
+
+
+/* ================= CATEGORY ================= */
+
+.category-card {
+    text-align: center;
+    padding: 35px 20px;
+    border-radius: 15px;
+    background: white;
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    border-color: #0d6efd;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.category-card i {
+    font-size: 45px;
+    color: #0d6efd;
+}
+
+.category-card h5 {
+    margin-top: 15px;
+    font-weight: 700;
+}
+
+.category-card p {
+    color: #888;
+    margin-bottom: 0;
+}
+
+
+/* ================= PRODUCTS ================= */
+
+.products-section {
+    background: #f7f9fc;
+}
+
+.product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    height: 190px;
+    background: #eaf3ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image i {
+    font-size: 75px;
+    color: #0d6efd;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.category-label {
+    font-size: 12px;
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+.product-info h5 {
+    margin-top: 8px;
+    font-weight: 700;
+}
+
+.product-info h4 {
+    color: #0d6efd;
+    font-weight: 700;
+}
+
+.product-info p {
+    color: #888;
+}
+
+
+/* ================= HOW IT WORKS ================= */
+
+.step-card {
+    padding: 35px 20px;
+}
+
+.step-icon {
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    border-radius: 50%;
+    background: #eaf3ff;
+    color: #0d6efd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+}
+
+.step-card h4 {
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+.step-card p {
+    color: #777;
+}
+
+
+/* ================= SELL SECTION ================= */
+
+.sell-section {
+    background: #f7f9fc;
+}
+
+.sell-box {
+    padding: 70px 20px;
+    border-radius: 20px;
+    background: #0d6efd;
+    color: white;
+}
+
+.sell-box h2 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.sell-box p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.sell-box .btn {
+    margin-top: 15px;
+    border-radius: 30px;
+    padding: 12px 30px;
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer {
+    padding: 50px 0;
+    background: #111827;
+    color: white;
+}
+
+.footer p {
+    color: #aaa;
+}
+
+.social-icons i {
+    font-size: 20px;
+    margin-left: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.social-icons i:hover {
+    color: #0d6efd;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 991px) {
+
+    #mainNavbar {
+        background: white;
+        padding: 12px 0;
+    }
+
+    .navbar-nav {
+        padding-top: 15px;
+    }
+
+    .nav-link {
+        padding: 10px 0;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .sell-btn {
+        margin-top: 10px;
+    }
+
+    .hero-section {
+        padding-top: 130px;
+    }
+
+    .hero-image {
+        width: 250px;
+        height: 250px;
+        font-size: 100px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .hero-section h1 {
+        font-size: 45px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .hero-image {
+        width: 200px;
+        height: 200px;
+        font-size: 80px;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+    .sell-box h2 {
+        font-size: 30px;
+    }
+}
